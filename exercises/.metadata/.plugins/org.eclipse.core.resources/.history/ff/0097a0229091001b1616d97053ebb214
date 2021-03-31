@@ -1,0 +1,10 @@
+package salary;
+
+public abstract class PrincipalSalary implements SalaryCalculator {
+
+	@Override
+	public Double getSalary(Double salary, int yearsAsPrincipal, Double bonus) {
+		return return salary+(yearsAsPrincipal*bonus);
+	}
+
+}

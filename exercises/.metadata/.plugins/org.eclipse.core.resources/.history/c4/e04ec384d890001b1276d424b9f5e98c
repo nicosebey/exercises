@@ -1,0 +1,17 @@
+package person;
+
+import java.util.Date;
+
+public class Student {
+	private long id;
+	private String firstName;
+	private String lastName;
+	private Date birthDate;
+	
+	public Student(long id, String firstName, String lastName, Date birthDate) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.birthDate = birthDate;
+	}
+}

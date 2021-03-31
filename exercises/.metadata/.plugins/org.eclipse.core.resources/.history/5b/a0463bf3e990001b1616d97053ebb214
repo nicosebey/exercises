@@ -1,0 +1,85 @@
+package school;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
+
+import person.Janitor;
+import person.Principal;
+import person.Student;
+import person.Teacher;
+
+public class School {
+	private List<Student> students;
+	private List<Teacher> teachers;
+	private Janitor janitor;
+	private Principal principal;
+	
+	
+	public School(Principal p, Janitor j) {
+		super();
+		this.students = new ArrayList<>();//new TreeSet <Student>();
+		this.teachers = new ArrayList<>();//new TreeSet<Teacher>();
+		principal = p;
+		janitor = j;
+	}
+
+
+	public void addStudent(Student student) {
+		students.add(student);
+	}
+	public void addTeacher(Teacher teacher) {
+		teachers.add(teacher);
+	}
+	
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
+	}
+
+	public List<Teacher> getTeachers() {
+		return teachers;
+	}
+
+
+	public void setTeachers(List<Teacher> teachers) {
+		this.teachers = teachers;
+	}
+
+
+	public Janitor getJanitor() {
+		return janitor;
+	}
+
+
+	public void setJanitor(Janitor janitor) {
+		this.janitor = janitor;
+	}
+
+
+	public Principal getPrincipal() {
+		return principal;
+	}
+
+
+	public void setPrincipal(Principal principal) {
+		this.principal = principal;
+	}
+	
+	public List<Student> getStudentsBySubject(Integer subjectId){
+		return students.stream().filter(student -> student.getSubjects().stream().anyMatch(subject -> subject.getSubjectId().equals(subjectId))).collect(Collectors.toList()());
+	}
+	
+	public Set<Student> getStudentsByFirstLetterLastName(){
+		return students.stream().collect(Collectors.groupingBy(student -> student.t))
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,19 @@
+import java.util.Set;
+import java.util.TreeSet;
+
+import conference.Meeting;
+import conference.Room;
+
+public class Main {
+
+	public static void main(String[] args) {
+	 room = new Room();
+		Set<Meeting> meetings = new TreeSet<Meeting>();
+		
+		
+		
+		
+		
+	}
+
+}

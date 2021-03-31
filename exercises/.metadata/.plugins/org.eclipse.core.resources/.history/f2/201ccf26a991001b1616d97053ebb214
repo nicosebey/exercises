@@ -1,0 +1,14 @@
+package conference;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Room {
+	
+	private List<Meeting>mettings = new ArrayList<Meeting>();
+	
+	public void addMeeting(Meeting meeting) {
+		
+	}
+	
+}

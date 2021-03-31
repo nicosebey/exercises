@@ -1,0 +1,5 @@
+package conferenceExceptions;
+
+public class RoomOverlapException extends Exception {
+
+}

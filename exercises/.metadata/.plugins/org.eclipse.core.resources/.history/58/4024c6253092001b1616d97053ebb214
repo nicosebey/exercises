@@ -1,0 +1,38 @@
+package conference;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import conferenceExceptions.InvalidDurationException;
+import conferenceExceptions.RoomOverlapException;
+
+public class Room {
+	
+	private List<Meeting>meetings;
+	
+	public Room() {
+		this.meetings = new ArrayList<Meeting>();
+	}
+
+	public void addMeeting(Meeting meeting) throws RoomOverlapException {
+		if (roomIsEmpty(meeting)) {
+			if (meetings.stream().filter(meet -> meet.overlap(meeting)).count() > 0) {
+					throw new RoomOverlapException("The meeting overlaps with an existing meeting");
+				}
+			}
+			meetings.add(meeting);
+		}
+
+	public boolean roomIsEmpty(Meeting meeting) {
+		if (meeting.getBeggingTime() != null && meeting.getEndTime() != null) {
+			long interval = meeting.getEndTime().getTime() - meeting.getBeggingTime().getTime();
+			long intervalInMins = TimeUnit.MILLISECONDS.toMinutes(interval);
+			if(!(intervalInMins >= 15 && intervalInMins <= 180)) {
+				throw new InvalidDurationException("the meeting duration time is invalid. It must be more than 15 mins and less than 3 hours");
+			}
+		}
+		return false;
+	}
+	
+}

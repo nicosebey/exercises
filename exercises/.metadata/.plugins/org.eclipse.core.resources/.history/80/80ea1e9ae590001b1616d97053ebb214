@@ -1,0 +1,76 @@
+package school;
+
+import java.util.Set;
+
+import person.Janitor;
+import person.Principal;
+import person.Student;
+import person.Teacher;
+
+public class School {
+	private Set<Student> students;
+	private Set<Teacher> teachers;
+	private Janitor janitor;
+	private Principal principal;
+	
+	
+	public School(Set<Student> students, Set<Teacher> teachers, Janitor janitor, Principal principal) {
+		super();
+		this.students = students;
+		this.teachers = teachers;
+		this.janitor = janitor;
+		this.principal = principal;
+	}
+
+
+	public void addStudent(Student student) {
+		students.add(student);
+	}
+	public void addTeacher(Teacher teacher) {
+		teachers.add(teacher);
+	}
+	
+	public Set<Student> getStudents() {
+		return students;
+	}
+
+
+	public void setStudents(Set<Student> students) {
+		this.students = students;
+	}
+
+
+	public Set<Teacher> getTeachers() {
+		return teachers;
+	}
+
+
+	public void setTeachers(Set<Teacher> teachers) {
+		this.teachers = teachers;
+	}
+
+
+	public Janitor getJanitor() {
+		return janitor;
+	}
+
+
+	public void setJanitor(Janitor janitor) {
+		this.janitor = janitor;
+	}
+
+
+	public Principal getPrincipal() {
+		return principal;
+	}
+
+
+	public void setPrincipal(Principal principal) {
+		this.principal = principal;
+	}
+	
+	
+	
+	
+
+}

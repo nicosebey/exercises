@@ -1,0 +1,26 @@
+package person;
+
+import java.util.Date;
+
+import salary.SalaryCalculator;
+
+public class Janitor extends Person{
+	
+	private Double salary;
+	private SalaryCalculator calculator;
+	
+	public Janitor(int id, String firstName, String lastName, Date birthDate, SalaryCalculator calculator) {
+		super(id, firstName, lastName, birthDate);
+		this.salary = salary;
+		this.calculator = calculator;
+	}
+
+	public void setSalary(Double salary) {
+		this.salary = salary;
+	}
+	
+	public double getSalary() {
+		return calculator.getSalary();
+	}
+
+}

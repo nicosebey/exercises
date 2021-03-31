@@ -1,0 +1,12 @@
+package person;
+
+import java.util.Date;
+
+public class Teacher extends Person{
+
+	public Teacher(Long id, String firstName, String lastName, Date birthDate) {
+		super(id, firstName, lastName, birthDate);
+		
+	}
+
+}

@@ -1,0 +1,110 @@
+package school;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
+
+import person.Janitor;
+import person.Principal;
+import person.Student;
+import person.Teacher;
+
+public class School {
+	private Set<Student> students;
+	private Set<Teacher> teachers;
+	private Janitor janitor;
+	private Principal principal;
+	
+	
+	public School(Principal p, Janitor j) {
+		super();
+		this.students = new TreeSet <Student>();
+		this.teachers = new TreeSet<Teacher>();
+		principal = p;
+		janitor = j;
+	}
+
+
+	public void addStudent(Student student) {
+		students.add(student);
+	}
+	public void addTeacher(Teacher teacher) {
+		teachers.add(teacher);
+	}
+	
+	public Set<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(Set<Student> students) {
+		this.students = students;
+	}
+
+	public Set<Teacher> getTeachers() {
+		return teachers;
+	}
+
+
+	public void setTeachers(Set<Teacher> teachers) {
+		this.teachers = teachers;
+	}
+
+
+	public Janitor getJanitor() {
+		return janitor;
+	}
+
+
+	public void setJanitor(Janitor janitor) {
+		this.janitor = janitor;
+	}
+
+
+	public Principal getPrincipal() {
+		return principal;
+	}
+
+
+	public void setPrincipal(Principal principal) {
+		this.principal = principal;
+	}
+	
+	public List<Student> getStudentsBySubject(Integer subjectId){
+		return students.stream().filter(student -> student.getSubjects().stream().anyMatch(subject -> subject.getSubjectId().equals(subjectId))).collect(Collectors.toList());
+	}
+	
+	public Map<String, List<Student>> getGroupedStudents(){
+		Map<String, List<Student>> group = new TreeMap<String, List<Student>>();
+
+		for (Student student : students) {
+		    String firstCharacter =  student.getLastName().substring(0,1);
+		    
+		    if (group.containsKey(firstCharacter)) {
+		        group.get(firstCharacter).add(student);
+		    } else {
+		    	List<Student> list = new ArrayList<Student>();
+		        list.add(student);
+		        group.put(firstCharacter, list);
+		    }
+		}
+		return group;
+	}
+	
+	
+	public void loadSchool() {
+		
+		principal = new Principal(1,"principalName","principalLastName", new Date(),100.00,0.1);
+		
+		
+		
+		students.add(new Student())
+	}
+	
+	
+	
+
+}

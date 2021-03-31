@@ -1,0 +1,6 @@
+package school;
+
+public interface SalaryCalculator {
+	
+	public Double getSalary();
+}

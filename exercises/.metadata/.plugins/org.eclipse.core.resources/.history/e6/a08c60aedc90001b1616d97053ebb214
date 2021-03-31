@@ -1,0 +1,14 @@
+package person;
+
+import java.util.Date;
+
+public class Janitor extends Person{
+	
+	private Double salary;
+	
+	public Janitor(Long id, String firstName, String lastName, Date birthDate, Double salary) {
+		super(id, firstName, lastName, birthDate);
+		
+	}
+
+}

@@ -1,0 +1,15 @@
+package school;
+
+public class Subject {
+	
+	private int subjectId;
+	private String name;
+	private Double cost;
+	
+	public Subject(int subjectId, String name, Double cost) {
+		this.subjectId = subjectId;
+		this.name = name;
+		this.cost = cost;
+		// TODO Auto-generated constructor stub
+	}
+}

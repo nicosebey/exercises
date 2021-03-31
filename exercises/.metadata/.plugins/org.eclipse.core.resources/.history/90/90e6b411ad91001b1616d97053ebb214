@@ -1,0 +1,38 @@
+package conference;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Room {
+	
+	private List<Meeting>mettings = new ArrayList<Meeting>();
+	
+	public void addMeeting(Meeting meeting) {
+		if (roomIsEmpty(meeting)) {
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			String id = format.format(meeting.getStart()).toString();
+			List<Meeting> meetingTemp;
+			if (meetings.containsKey(id)) {
+				meetingTemp = meetings.get(id);
+				if (meetingTemp.stream().anyMatch(existingMeeting-> overlap(existingMeeting, meeting))) {
+					throw new OverlapException("The meeting overlaps with an existing meeting");
+				}
+			}
+			else {
+				meetingTemp = new ArrayList<Meeting>();
+			}
+			meetingTemp.add(meeting);
+			meetings.put(id, meetingTemp);
+		}
+	}
+	
+	public boolean roomIsEmpty(Meeting meeting) {
+		if (meeting.getBeggingTime() != null && meeting.getEndTime() != null) {
+			long interval = meeting.getEndTime().getTime() - meeting.getBeggingTime().getTime();
+			long intervalInMins = TimeUnit.MILLISECONDS.toMinutes(interval);
+			if(intervalInMins >= 15 && intervalInMins <= 180) {
+				return true;
+			}
+	}
+	
+}

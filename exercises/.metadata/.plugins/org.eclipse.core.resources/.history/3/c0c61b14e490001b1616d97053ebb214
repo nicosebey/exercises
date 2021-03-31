@@ -1,0 +1,24 @@
+package person;
+
+import java.util.Date;
+
+import school.SalaryCalculator;
+
+public class Principal extends Person implements SalaryCalculator{
+	
+	private Double salary;
+	
+	public Principal(Long id, String firstName, String lastName, Date birthDate, Double salary) {
+		super(id, firstName, lastName, birthDate);
+		this.salary = salary;
+		
+	}
+
+	@Override
+	public Double getSalary() {
+		return salary;
+	}
+	
+	
+
+}

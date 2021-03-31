@@ -1,0 +1,13 @@
+package person;
+
+import java.util.Date;
+
+public class Teacher extends Person{
+	
+	private Set<Subject> subjects;
+	public Teacher(Long id, String firstName, String lastName, Date birthDate) {
+		super(id, firstName, lastName, birthDate);
+		
+	}
+
+}

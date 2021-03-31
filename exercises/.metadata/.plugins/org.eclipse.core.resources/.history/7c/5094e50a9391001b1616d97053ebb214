@@ -1,0 +1,57 @@
+package person;
+
+import java.util.Date;
+
+import salary.SalaryCalculator;
+
+public class Principal extends Person implements SalaryCalculator{
+	
+	private Double salary;
+	private int yearsAsPrincipal;
+	private Double bonus;
+	
+	public Principal(Long id, String firstName, String lastName, Date birthDate, Double salary, Double bonus) {
+		super(id, firstName, lastName, birthDate);
+		this.salary = salary;
+		this.bonus = bonus;
+		
+	}
+	
+
+	public int getYearsAsPrincipal() {
+		return yearsAsPrincipal;
+	}
+
+
+	public void setYearsAsPrincipal(int yearsAsPrincipal) {
+		this.yearsAsPrincipal = yearsAsPrincipal;
+	}
+
+
+	public Double getBonus() {
+		return bonus;
+	}
+
+
+	public void setBonus(Double bonus) {
+		this.bonus = bonus;
+	}
+
+
+	public void setSalary(Double salary) {
+		this.salary = salary;
+	}
+	
+	public void addYearAsPrincipal() {
+		this.yearsAsPrincipal=+1;
+	}
+
+
+	@Override
+	public Double getSalary() {
+		return salary+(yearsAsPrincipal*bonus);
+	}
+	
+	
+
+}

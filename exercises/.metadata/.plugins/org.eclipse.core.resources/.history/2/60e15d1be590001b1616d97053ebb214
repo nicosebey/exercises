@@ -1,0 +1,9 @@
+package school;
+
+public class School {
+	private Set<Student> students;
+	private Set<Teacher> teachers;
+	private Janitor janitor;
+	private Principal principal;
+
+}

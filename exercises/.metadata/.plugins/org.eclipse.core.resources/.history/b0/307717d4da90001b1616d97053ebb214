@@ -1,0 +1,16 @@
+package person;
+
+import java.util.Date;
+import java.util.Set;
+
+import school.Subject;
+
+public class Student extends Person{
+	private Set<Subject> subjects;
+	public Student(Long id, String firstName, String lastName, Date birthDate) {
+		super(id, firstName, lastName, birthDate);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+}

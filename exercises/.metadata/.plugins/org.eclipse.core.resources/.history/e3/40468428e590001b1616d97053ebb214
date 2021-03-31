@@ -1,0 +1,15 @@
+package school;
+
+import java.util.Set;
+
+import person.Janitor;
+import person.Principal;
+import person.Person;
+
+public class School {
+	private Set<Student> students;
+	private Set<Teacher> teachers;
+	private Janitor janitor;
+	private Principal principal;
+
+}
